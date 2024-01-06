@@ -24,10 +24,11 @@ public class Menu {
 
             switch(num) {
                 case 1 : menuc.showListLecture(); break;
-                case 2 : memc.showMemberInfo(); break;
+                case 2 : menuc.toString(); break;
                 case 9 : System.out.println("Coraft를 종료합니다. 감사합니다."); return;
                 default : System.out.println("메뉴를 잘못 선택했습니다."); break;
             }
+
         }
     }
 }

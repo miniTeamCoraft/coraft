@@ -36,4 +36,5 @@ public class LectureDTO {
     public String lectInfo() {
         return "강좌 명: " + this.lecName + ", 날짜/시간: " + ", 강좌 가격: " + this.lecPrice + "원";
     }
+
 }

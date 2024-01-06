@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class MemberController {
 
+    MemberDTO memberDTO = new MemberDTO();
+
     public class UserDataSet {
         private ArrayList<MemberDTO> members;
 

@@ -1,10 +1,13 @@
 package com.coraft.project.view;
 
+import com.coraft.project.controller.MemberController;
+
 import java.util.Scanner;
 
 public class Login {
 
     Scanner sc = new Scanner(System.in);
+
 
 
     public void mainLogin() {
