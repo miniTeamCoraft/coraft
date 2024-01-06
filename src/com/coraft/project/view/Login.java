@@ -1,10 +1,14 @@
 package com.coraft.project.view;
 
+import com.coraft.project.dto.MemberDTO;
+
 import java.util.Scanner;
 
 public class Login {
 
     Scanner sc = new Scanner(System.in);
+
+    private static MemberDTO menber[] = new MemberDTO[5];
 
 
     public void mainLogin() {
@@ -21,8 +25,33 @@ public class Login {
         int num = sc.nextInt();
 
         switch (num) {
-            case 1 : ; break;
-            case 2 : ; break;
+            case 1 :
+
+
+
+                System.out.printf("로그인을 시작합니다.");
+                System.out.printf("알맞는 아이디와 비밀번호를 적어주세요.");
+                System.out.printf("아이디 : ");
+                String id = sc.next();
+
+
+                ;break;
+            case 2 : ;
+                System.out.println("회원가입을 시작합니다.");
+                System.out.printf("알맞는 정보를 넣어주세요.");
+                String name = sc.next();
+                int age = sc.nextInt();
+                String gender = sc.next();
+                String phone = sc.next();
+                String email = sc.next();
+
+                System.out.printf("name : " + name);
+                System.out.printf("age :" + age);
+                System.out.printf("gender : " + gender);
+                System.out.printf("email : " + email);
+
+
+                ;break;
             case 9 : ; break;
             default: System.out.println("잘못된 번호를 입력하셨습니다."); break;
 

@@ -23,7 +23,8 @@ public class MemberDTO {
 
     }
 
-    public void MemberDTO(String name, int age, char gender, String phone, String email){
+    //마이 서비스 불러오기로 쓸 예정.
+    public void myss(String name, int age, char gender, String phone, String email){
         setName(name);
         setAge(age);
         setGender(gender);
@@ -71,29 +72,10 @@ public class MemberDTO {
         this.email = email;
     }
 
-
-    public boolean join (Object o){
-        if (o == null || !(o instanceof MemberDTO)){
-            return false;
-        }
-        MemberDTO temp = (MemberDTO)o;
-        return false;
-    }
-
-    @Override
-    public String toString() {
-        String info = "name : " + name + "\n";
-        info += "age: " + age + "\n";
-        info += "gender : " + gender + "\n";
-        info += "phone : " + phone + "\n";
-        info += "email : " + email + "\n";
-        return info;
-    }
-
-
-
     public boolean contains(MemberDTO members) {
         return false;
     }
+
+
 }
 
