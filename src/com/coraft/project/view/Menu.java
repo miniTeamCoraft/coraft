@@ -2,6 +2,7 @@ package com.coraft.project.view;
 
 import com.coraft.project.controller.MemberController;
 import com.coraft.project.controller.MenuController;
+import com.coraft.project.dto.MemberDTO;
 
 import java.util.Scanner;
 
@@ -9,7 +10,8 @@ public class Menu {
     Scanner sc = new Scanner(System.in);
 
     MenuController menuc = new MenuController();
-    MemberController memc = new MemberController();
+//    MemberDTO memc = new MemberDTO();
+    MemberDTO memc = new MemberDTO();
 
     public void mainMenu() {
         while(true) {

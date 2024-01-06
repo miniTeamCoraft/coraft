@@ -23,15 +23,6 @@ public class MemberDTO {
 
     }
 
-    //마이 서비스 불러오기로 쓸 예정.
-    public void myss(String name, int age, char gender, String phone, String email){
-        setName(name);
-        setAge(age);
-        setGender(gender);
-        setPhone(phone);
-        setEmail(email);
-    }
-
     public String getName(){
         return name;
     }
@@ -76,6 +67,14 @@ public class MemberDTO {
         return false;
     }
 
+
+    public void showMemberInfo() {
+        setName(name);
+        setAge(age);
+        setGender(gender);
+        setPhone(phone);
+        setEmail(email);
+    }
 
 }
 
