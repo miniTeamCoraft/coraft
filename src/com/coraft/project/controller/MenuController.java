@@ -1,6 +1,7 @@
 package com.coraft.project.controller;
 
 import com.coraft.project.dto.LectureDTO;
+import com.coraft.project.view.Payment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,8 @@ public class MenuController {
     private List<LectureDTO> lectures;
 
     Scanner sc = new Scanner(System.in);
+
+    Payment payment = new Payment();
 
     public MenuController() {
         lectures = new ArrayList<LectureDTO>();
@@ -40,7 +43,52 @@ public class MenuController {
         }
     }
 
-    public void selectLecture() {
-        System.out.println("강의 선택");
+
+ 
+    public int selectLecture() {
+        System.out.println("=====================");
+        System.out.println("1.'보컬 클래스' 신청하기");
+        System.out.println("2.'천연 비누 만들기' 신청하기");
+        System.out.println("3.'과자 만들기' 신청하기");
+        System.out.println("4.'레진 손거울 만들기' 신청하기");
+        System.out.println("5.'전통 유리 공예 클래스' 신청하기");
+        System.out.println("9. 뒤로가기");
+        System.out.println("=====================");
+        System.out.print("신청할 강좌를 선택하세요 : ");
+        int num = sc.nextInt();
+        switch (num) {
+            case 1:
+                System.out.println(lecture[0].lectInfo());
+                payment.mainPayment(); break;
+
+            case 2:
+                System.out.println(lecture[1].lectInfo());
+                payment.mainPayment(); break;
+
+            case 3:
+                System.out.println(lecture[2].lectInfo());
+                payment.mainPayment(); break;
+            case 4:
+                System.out.println(lecture[3].lectInfo());
+                payment.mainPayment(); break;
+
+            case 5:
+                System.out.println(lecture[4].lectInfo());
+                payment.mainPayment(); break;
+
+            case 9:
+                System.out.println("뒤로가기");
+                break;
+            default:
+                System.out.println("강좌를 잘못 선택하셨습니다.");
+                break;
+        }
+
+        // 강좌 결제
+
+        int index = num - 1;
+
+        return index;
+
     }
 }
