@@ -22,6 +22,7 @@ public class Payment {
         int payProgress = sc.nextInt();
 
         switch (payProgress) {
+
             case 1 : pc.payCardMember(member, lecture); break;
             case 2 :
                 System.out.println("포인트를 차감하고 부족한 금액은 카드결제로 진행합니다.");
