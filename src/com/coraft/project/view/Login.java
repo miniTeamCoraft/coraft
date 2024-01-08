@@ -63,6 +63,19 @@ public class Login {
         } else {
             System.out.printf("확인되었습니다.\n");
         }
+        boolean isDuplicate = false;
+        for (MemberDTO member : members) {
+            if (member.getId().equals(id)) {
+                isDuplicate = true;
+                break;
+            }
+        }
+
+        if (isDuplicate) {
+            System.out.println("중복된 아이디입니다.");
+        } else {
+            MemberDTO user = new MemberDTO(id);
+        }
 
         System.out.print("비밀번호를 입력하세요 : ");
         String pwd = sc.nextLine();
