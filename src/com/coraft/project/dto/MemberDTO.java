@@ -10,7 +10,7 @@ public class MemberDTO {
     private String email;
     private int point = 5000;
 
-    public MemberDTO() {}
+    public MemberDTO(String id) {}
 
     public MemberDTO(String id, String pwd) {
         this.id = id;
@@ -37,6 +37,7 @@ public class MemberDTO {
         this.email = email;
         this.point = point;
     }
+
 
     public String getId() {
         return id;
@@ -101,7 +102,6 @@ public class MemberDTO {
     public void setPoint(int point) {
         this.point = point;
     }
-
     @Override
     public String toString() {
         return "MemberDTO{" +

@@ -27,7 +27,11 @@ public class MenuController {
     public void showListLecture(MemberDTO user) {
         System.out.println("*****************************************************");
         for(int i = 0; i < lectures.size(); i++) {
-            System.out.println("강의 이름 | " + lectures.get(i).getLecName() + ", 날짜/시간 | " + lectures.get(i).getDate() + " / " + lectures.get(i).getTime() + ", 가격 | " + lectures.get(i).getLecPrice());
+            System.out.println("-------------------------------------" + "\n"
+                    + "강의 이름 : " + lectures.get(i).getLecName() + "\n"
+                    + "날짜/시간 : " + lectures.get(i).getDate() + " / " + lectures.get(i).getTime() + "\n"
+                    + "가격 : " + lectures.get(i).getLecPrice() + "\n"
+                    + "-------------------------------------");
         }
         System.out.println("*****************************************************");
 
@@ -41,38 +45,39 @@ public class MenuController {
     }
 
     public void selectLecture(MemberDTO user) {
+        System.out.println("=====================");
+        System.out.println("1.'보컬 클래스' 신청하기");
+        System.out.println("2.'천연 비누 만들기' 신청하기");
+        System.out.println("3.'과자 만들기' 신청하기");
+        System.out.println("4.'레진 손거울 만들기' 신청하기");
+        System.out.println("5.'전통 유리 공예 클래스' 신청하기");
+        System.out.println("9. 뒤로가기");
+        System.out.println("=====================");
+        System.out.print("신청할 강좌를 선택하세요 : ");
+
         int num = sc.nextInt();
+        switch (num) {
+            case 1:
+                System.out.println(lectures.get(0).toString()); break;
 
-        while(true) {
-            System.out.println("=====================");
-            System.out.println("1.'보컬 클래스' 신청하기");
-            System.out.println("2.'천연 비누 만들기' 신청하기");
-            System.out.println("3.'과자 만들기' 신청하기");
-            System.out.println("4.'레진 손거울 만들기' 신청하기");
-            System.out.println("5.'전통 유리 공예 클래스' 신청하기");
-            System.out.println("9. 뒤로가기");
-            System.out.println("=====================");
-            System.out.print("신청할 강좌를 선택하세요 : ");
+            case 2:
+                System.out.println(lectures.get(1).toString()); break;
 
-            switch (num) {
-                case 1:
-                    System.out.println(lectures.get(0).toString()); break;
-                case 2:
-                    System.out.println(lectures.get(1).toString()); break;
-                case 3:
-                    System.out.println(lectures.get(2).toString()); break;
-                case 4:
-                    System.out.println(lectures.get(3).toString()); break;
-                case 5:
-                    System.out.println(lectures.get(4).toString()); break;
-                case 9:
-                    System.out.println("뒤로가기");
-                    break;
-                default:
-                    System.out.println("강좌를 잘못 선택하셨습니다.");
-                    break;
-            }
-            break;
+            case 3:
+                System.out.println(lectures.get(2).toString()); break;
+
+            case 4:
+                System.out.println(lectures.get(3).toString()); break;
+
+            case 5:
+                System.out.println(lectures.get(4).toString()); break;
+
+            case 9:
+                System.out.println("뒤로가기");
+                break;
+            default:
+                System.out.println("강좌를 잘못 선택하셨습니다.");
+                break;
         }
 
         Payment payment = new Payment();
