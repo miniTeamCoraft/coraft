@@ -1,6 +1,7 @@
 package com.coraft.project.controller;
 
 import com.coraft.project.dto.LectureDTO;
+import com.coraft.project.dto.MemberDTO;
 import com.coraft.project.view.Payment;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class MenuController {
         lectures.add(new LectureDTO("전통 유리 공예 클래스", "2024년 2월 5일", "오후 1시30분 ~ 3시", 70000));
     }
 
-    public void showListLecture() {
+    public void showListLecture(MemberDTO user) {
         System.out.println("*****************************************************");
         for(int i = 0; i < lectures.size(); i++) {
             System.out.println("-------------------------------------" + "\n"
@@ -37,13 +38,13 @@ public class MenuController {
         System.out.print("강좌를 선택하시겠습니까? (Y / N) : ");
         char answer = sc.next().toUpperCase().charAt(0);
         if (answer == 'Y') {
-            selectLecture();
+            selectLecture(user);
         }else {
             System.out.println("메뉴를 잘못 입력했습니다.");
         }
     }
 
-    public void selectLecture() {
+    public void selectLecture(MemberDTO user) {
         System.out.println("=====================");
         System.out.println("1.'보컬 클래스' 신청하기");
         System.out.println("2.'천연 비누 만들기' 신청하기");
@@ -58,22 +59,18 @@ public class MenuController {
         switch (num) {
             case 1:
                 System.out.println(lectures.get(0).toString()); break;
-                //payment.mainPayment(); break;
 
             case 2:
                 System.out.println(lectures.get(1).toString()); break;
-                //payment.mainPayment(); break;
 
             case 3:
                 System.out.println(lectures.get(2).toString()); break;
-                //payment.mainPayment(); break;
+
             case 4:
                 System.out.println(lectures.get(3).toString()); break;
-                //payment.mainPayment(); break;
 
             case 5:
                 System.out.println(lectures.get(4).toString()); break;
-                //payment.mainPayment(); break;
 
             case 9:
                 System.out.println("뒤로가기");
@@ -87,6 +84,7 @@ public class MenuController {
 
         int index = num - 1;
 
-        payment.mainPayment(lectures.get(index));
+        payment.mainPayment(user, lectures.get(index));
     }
+
 }

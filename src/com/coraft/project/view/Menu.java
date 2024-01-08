@@ -24,7 +24,7 @@ public class Menu {
             MemberController memcont = new MemberController();
 
             switch(num) {
-                case 1 : lectcont.showListLecture(); break;
+                case 1 : lectcont.showListLecture(user); break;
                 case 2 : memcont.memberInfo(user); break;
                 case 9 : System.out.println("Coraft를 종료합니다. 감사합니다."); return;
                 default : System.out.println("메뉴를 잘못 선택했습니다."); break;

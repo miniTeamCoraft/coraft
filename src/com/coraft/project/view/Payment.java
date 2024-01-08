@@ -1,19 +1,21 @@
 package com.coraft.project.view;
 
 //import com.coraft.project.controller.PayController;
+import com.coraft.project.controller.PayController;
 import com.coraft.project.dto.LectureDTO;
+import com.coraft.project.dto.MemberDTO;
 
 import java.util.Scanner;
 
 public class Payment {
 
     private Scanner sc = new Scanner(System.in);
-    //PayController pc = new PayController();
+    PayController pc = new PayController();
 
-    public void mainPayment(LectureDTO lecture) {
+    public void mainPayment(MemberDTO member, LectureDTO lecture) {
         // 결제 금액
         // 진행상황
-        System.out.println(lecture.getLecPrice());
+//        System.out.println(lecture.getLecPrice());
 
 
         System.out.println("=========== 결제 진행 ==========");
@@ -25,18 +27,17 @@ public class Payment {
         int payProgress = sc.nextInt();
 
         switch (payProgress) {
-            case 1 : pc.payCardMember(); break;
+            case 1 : pc.payCardMember(lecture); break;
             case 2 :
                 System.out.println("포인트를 차감하고 부족한 금액은 카드결제로 진행합니다.");
                 System.out.print("결제 진행여부를 선택해 주세요 (Y/N) : ");
                 char ch = sc.next().toUpperCase().charAt(0);
                 if (ch == 'Y') {
                     System.out.println("포인트 결제를 선택하셨습니다.");
-                    pc.payBonusMember();
+                    pc.payBonusMember(member.getPoint(), lecture);
 
                 } else if (ch == 'N') {
-                    System.out.println("포인트 결제가 취소되었습니다. 다른메뉴를 선택해주세요.");
-                    mainPayment(lectures.get(index));
+                    System.out.println("포인트 결제가 취소되었습니다. 다른메뉴를 선택해주세요."); break;
 
                 } else {
                     System.out.println("잘못된 번호를 입력하셨습니다. 확인 후 재입력해주세요");
