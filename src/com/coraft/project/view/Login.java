@@ -50,6 +50,19 @@ public class Login {
         System.out.print("아이디를 입력하세요 : ");
         String id = sc.nextLine();
         List<MemberDTO> members = new ArrayList<>();
+        boolean isDuplicate = true;
+        for (MemberDTO member : members) {
+            if (member.getId().equals(id)) {
+                isDuplicate = false;
+                break;
+            }
+        } if (isDuplicate) {
+            System.out.println("중복된 아이디입니다.");
+            System.out.printf("다시 입력 부탁드립니다.");
+            id = sc.nextLine();
+        } else {
+            System.out.printf("확인되었습니다.\n");
+        }
         boolean isDuplicate = false;
         for (MemberDTO member : members) {
             if (member.getId().equals(id)) {
@@ -63,6 +76,7 @@ public class Login {
         } else {
             MemberDTO user = new MemberDTO(id);
         }
+
         System.out.print("비밀번호를 입력하세요 : ");
         String pwd = sc.nextLine();
         System.out.print("이름을 입력하세요 : ");

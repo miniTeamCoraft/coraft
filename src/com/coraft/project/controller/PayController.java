@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class PayController {
 
     Scanner sc = new Scanner(System.in);
-    MemberDTO memberDTO = new MemberDTO();  //고객DTO 객체생성
     LectureDTO menuDTO = new LectureDTO();     //메뉴DTO 객체 생성
     MenuController menuc = new MenuController();
 //    MemberController menc = new MemberController();
