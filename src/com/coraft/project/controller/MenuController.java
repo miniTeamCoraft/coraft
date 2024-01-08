@@ -12,7 +12,7 @@ public class MenuController {
 
     Scanner sc = new Scanner(System.in);
 
-    Payment payment = new Payment();
+
 
     public MenuController() {
         lectures = new ArrayList<LectureDTO>();
@@ -43,9 +43,7 @@ public class MenuController {
         }
     }
 
-
- 
-    public int selectLecture() {
+    public void selectLecture() {
         System.out.println("=====================");
         System.out.println("1.'보컬 클래스' 신청하기");
         System.out.println("2.'천연 비누 만들기' 신청하기");
@@ -55,26 +53,27 @@ public class MenuController {
         System.out.println("9. 뒤로가기");
         System.out.println("=====================");
         System.out.print("신청할 강좌를 선택하세요 : ");
+
         int num = sc.nextInt();
         switch (num) {
             case 1:
-                System.out.println(lecture[0].lectInfo());
-                payment.mainPayment(); break;
+                System.out.println(lectures.get(0).toString()); break;
+                //payment.mainPayment(); break;
 
             case 2:
-                System.out.println(lecture[1].lectInfo());
-                payment.mainPayment(); break;
+                System.out.println(lectures.get(1).toString()); break;
+                //payment.mainPayment(); break;
 
             case 3:
-                System.out.println(lecture[2].lectInfo());
-                payment.mainPayment(); break;
+                System.out.println(lectures.get(2).toString()); break;
+                //payment.mainPayment(); break;
             case 4:
-                System.out.println(lecture[3].lectInfo());
-                payment.mainPayment(); break;
+                System.out.println(lectures.get(3).toString()); break;
+                //payment.mainPayment(); break;
 
             case 5:
-                System.out.println(lecture[4].lectInfo());
-                payment.mainPayment(); break;
+                System.out.println(lectures.get(4).toString()); break;
+                //payment.mainPayment(); break;
 
             case 9:
                 System.out.println("뒤로가기");
@@ -84,11 +83,10 @@ public class MenuController {
                 break;
         }
 
-        // 강좌 결제
+        Payment payment = new Payment();
 
         int index = num - 1;
 
-        return index;
-
+        payment.mainPayment(lectures.get(index));
     }
 }
