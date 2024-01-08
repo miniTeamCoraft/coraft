@@ -67,4 +67,7 @@ public class MemberController {
             num = sc.nextInt();
         }while(num != 1);
     }
+
+
+
 }
