@@ -10,6 +10,7 @@ public class MemberDTO {
     private String phone;
     private String email;
 
+    private int point;
 
     public static void main(String[] args) {
 
@@ -67,6 +68,13 @@ public class MemberDTO {
         return false;
     }
 
+    public int getPoint() {
+        return point;
+    }
+
+    public void setPoint(int point) {
+        this.point = 5000;
+    }
 
     public void showMemberInfo() {
         setName(name);
@@ -74,6 +82,7 @@ public class MemberDTO {
         setGender(gender);
         setPhone(phone);
         setEmail(email);
+        setPoint(point);
     }
 
 }
