@@ -1,17 +1,20 @@
 package com.coraft.project.view;
 
-import com.coraft.project.controller.PayController;
+//import com.coraft.project.controller.PayController;
+import com.coraft.project.dto.LectureDTO;
 
 import java.util.Scanner;
 
 public class Payment {
 
     private Scanner sc = new Scanner(System.in);
-    PayController pc = new PayController();
+    //PayController pc = new PayController();
 
-    public void mainPayment() {
+    public void mainPayment(LectureDTO lecture) {
         // 결제 금액
         // 진행상황
+        System.out.println(lecture.getLecPrice());
+
 
         System.out.println("=========== 결제 진행 ==========");
         System.out.println("1. 카드 결제");
@@ -33,7 +36,7 @@ public class Payment {
 
                 } else if (ch == 'N') {
                     System.out.println("포인트 결제가 취소되었습니다. 다른메뉴를 선택해주세요.");
-                    mainPayment();
+                    mainPayment(lectures.get(index));
 
                 } else {
                     System.out.println("잘못된 번호를 입력하셨습니다. 확인 후 재입력해주세요");
