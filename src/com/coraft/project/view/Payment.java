@@ -1,6 +1,5 @@
 package com.coraft.project.view;
 
-//import com.coraft.project.controller.PayController;
 import com.coraft.project.controller.PayController;
 import com.coraft.project.dto.LectureDTO;
 import com.coraft.project.dto.MemberDTO;
@@ -13,10 +12,6 @@ public class Payment {
     PayController pc = new PayController();
 
     public void mainPayment(MemberDTO member, LectureDTO lecture) {
-        // 결제 금액
-        // 진행상황
-//        System.out.println(lecture.getLecPrice());
-
 
         System.out.println("=========== 결제 진행 ==========");
         System.out.println("1. 카드 결제");
@@ -27,14 +22,14 @@ public class Payment {
         int payProgress = sc.nextInt();
 
         switch (payProgress) {
-            case 1 : pc.payCardMember(lecture); break;
+            case 1 : pc.payCardMember(member, lecture); break;
             case 2 :
                 System.out.println("포인트를 차감하고 부족한 금액은 카드결제로 진행합니다.");
                 System.out.print("결제 진행여부를 선택해 주세요 (Y/N) : ");
                 char ch = sc.next().toUpperCase().charAt(0);
                 if (ch == 'Y') {
                     System.out.println("포인트 결제를 선택하셨습니다.");
-                    pc.payBonusMember(member.getPoint(), lecture);
+                    pc.payBonusMember(member, lecture);
 
                 } else if (ch == 'N') {
                     System.out.println("포인트 결제가 취소되었습니다. 다른메뉴를 선택해주세요."); break;

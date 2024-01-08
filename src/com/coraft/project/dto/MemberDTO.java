@@ -98,6 +98,9 @@ public class MemberDTO {
         return point;
     }
 
+    public void setPoint(int point) {
+        this.point = point;
+    }
     @Override
     public String toString() {
         return "MemberDTO{" +
