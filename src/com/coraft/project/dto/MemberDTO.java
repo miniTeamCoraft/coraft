@@ -1,80 +1,118 @@
 package com.coraft.project.dto;
 
 public class MemberDTO {
-
-    private boolean jo;
-
+    private String id;
+    private String pwd;
     private String name;
     private int age;
     private char gender;
     private String phone;
     private String email;
+    private int point = 5000;
 
+    public MemberDTO() {}
 
-    public static void main(String[] args) {
-
-        /*    회원가입
-
-    가입을 한다 > 개인 정보 입력 > 완료 후 포인트 지급
-
-    이미 있는 아이디다 > 사이트로 돌아간다.
-
-    기능(메소드) : 회원 가입 (이름, 나이, 성별, 전화번호, 이메일 입력)/ 이미 있는 정보로 사이트로 돌아가기 */
-
+    public MemberDTO(String id, String pwd) {
+        this.id = id;
+        this.pwd = pwd;
     }
 
-    public String getName(){
-        return name;
-    }
-
-    public void setName(String name){
+    public MemberDTO(String id, String pwd, String name, int age, char gender, String phone, String email) {
+        this.id = id;
+        this.pwd = pwd;
         this.name = name;
-    }
-
-    public int getAge(){
-        return age;
-    }
-
-    public void setAge(int age){
         this.age = age;
-    }
-
-    public char getGender(){
-        return gender;
-    }
-
-    public void setGender(char gender){
         this.gender = gender;
-    }
-
-    public String getPhone(){
-        return phone;
-    }
-
-    public void setPhone(String phone){
         this.phone = phone;
-    }
-
-    public String getEmail(){
-        return email;
-    }
-
-    public void setEmail(String email){
         this.email = email;
     }
 
-    public boolean contains(MemberDTO members) {
-        return false;
+    public MemberDTO(String id, String pwd, String name, int age, char gender, String phone, String email, int point) {
+        this.id = id;
+        this.pwd = pwd;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.phone = phone;
+        this.email = email;
+        this.point = point;
     }
 
-
-    public void showMemberInfo() {
-        setName(name);
-        setAge(age);
-        setGender(gender);
-        setPhone(phone);
-        setEmail(email);
+    public String getId() {
+        return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getPoint() {
+        return point;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
+
+    @Override
+    public String toString() {
+        return "MemberDTO{" +
+                "id='" + id + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", point=" + point +
+                '}';
+    }
 }
-
