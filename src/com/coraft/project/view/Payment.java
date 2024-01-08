@@ -27,12 +27,19 @@ public class Payment {
                 System.out.println("포인트를 차감하고 부족한 금액은 카드결제로 진행합니다.");
                 System.out.print("결제 진행여부를 선택해 주세요 (Y/N) : ");
                 char ch = sc.next().toUpperCase().charAt(0);
-                if(ch == 'y') {
+                if (ch == 'Y') {
+                    System.out.println("포인트 결제를 선택하셨습니다.");
                     pc.payBonusMember();
+
+                } else if (ch == 'N') {
+                    System.out.println("포인트 결제가 취소되었습니다. 다른메뉴를 선택해주세요.");
+                    mainPayment();
+
+                } else {
+                    System.out.println("잘못된 번호를 입력하셨습니다. 확인 후 재입력해주세요");
                 } break;
             case 9 : System.out.println("결제가 취소되었습니다. 다른 메뉴를 선택해 주세요"); break;
-            default:
-                System.out.println("잘못된 번호를 입력하셨습니다. 확인 후 재입력해주세요");
+            default: System.out.println("잘못된 번호를 입력하셨습니다. 확인 후 재입력해주세요"); break;
         }
 
 

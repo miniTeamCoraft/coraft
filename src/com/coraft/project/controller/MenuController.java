@@ -1,11 +1,13 @@
 package com.coraft.project.controller;
 
 import com.coraft.project.dto.LectureDTO;
+import com.coraft.project.view.Payment;
 
 import java.util.Scanner;
 
 public class MenuController {
     Scanner sc = new Scanner(System.in);
+    Payment payment = new Payment();
     LectureDTO lecture[] = new LectureDTO[5];
 
     {
@@ -43,19 +45,23 @@ public class MenuController {
         switch (num) {
             case 1:
                 System.out.println(lecture[0].lectInfo());
-                break;
+                payment.mainPayment(); break;
+
             case 2:
                 System.out.println(lecture[1].lectInfo());
-                break;
+                payment.mainPayment(); break;
+
             case 3:
                 System.out.println(lecture[2].lectInfo());
-                break;
+                payment.mainPayment(); break;
             case 4:
                 System.out.println(lecture[3].lectInfo());
-                break;
+                payment.mainPayment(); break;
+
             case 5:
                 System.out.println(lecture[4].lectInfo());
-                break;
+                payment.mainPayment(); break;
+
             case 9:
                 System.out.println("뒤로가기");
                 break;
