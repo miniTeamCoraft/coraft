@@ -1,39 +1,59 @@
 package com.coraft.project.dto;
 
-import java.util.Date;
-
 public class LectureDTO {
     private String lecName;
-    // private 날짜 시간
+    private String date;
+    private String time;
     private int lecPrice;
 
-    public LectureDTO() {
+    public LectureDTO() {}
+
+    public LectureDTO(String lecName, String date, String time, int lecPrice) {
+        this.lecName = lecName;
+        this.date = date;
+        this.time = time;
+        this.lecPrice = lecPrice;
     }
 
-    public LectureDTO(String lecName, int lecPrice) {
-        this.lecName = lecName;/* 날짜 시간 */
-        this.lecPrice = lecPrice;
+    public String getLecName() {
+        return lecName;
     }
 
     public void setLecName(String lecName) {
         this.lecName = lecName;
     }
 
-    public String getLecName() {
-        return this.lecName;
+    public String getDate() {
+        return date;
     }
 
-    /* 날짜 시간 setter/getter 추가 */
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public int getLecPrice() {
+        return lecPrice;
+    }
 
     public void setLecPrice(int lecPrice) {
         this.lecPrice = lecPrice;
     }
 
-    public int getLecPrice() {
-        return this.lecPrice;
-    }
-
-    public String lectInfo() {
-        return "강좌 명: " + this.lecName + ", 날짜/시간: " + ", 강좌 가격: " + this.lecPrice + "원";
+    @Override
+    public String toString() {
+        return "LectureDTO{" +
+                "lecName='" + lecName + '\'' +
+                ", date='" + date + '\'' +
+                ", time='" + time + '\'' +
+                ", lecPrice=" + lecPrice +
+                '}';
     }
 }
