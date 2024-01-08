@@ -15,7 +15,6 @@ public class Application {
 //        mn.mainMenu();
 
 //        Payment pm = new Payment();
-//
 //        pm.mainPayment();
 
     }
