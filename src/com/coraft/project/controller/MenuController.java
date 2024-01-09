@@ -26,7 +26,7 @@ public class MenuController {
     public void showListLecture(MemberDTO user) {
         System.out.println("*****************************************************");
         for(int i = 0; i < lectures.size(); i++) {
-            System.out.println("강의 이름 | " + lectures.get(i).getLecName() + ", 날짜/시간 | " + lectures.get(i).getDate() + " / " + lectures.get(i).getTime() + ", 가격 | " + lectures.get(i).getLecPrice());      }
+            System.out.println("강의 이름 || " + lectures.get(i).getLecName() + ", 날짜/시간 || " + lectures.get(i).getDate() + " / " + lectures.get(i).getTime() + ", 가격 || " + lectures.get(i).getLecPrice());      }
         System.out.println("*****************************************************");
 
         System.out.print("강좌를 선택하시겠습니까? (Y / N) : ");
@@ -40,7 +40,7 @@ public class MenuController {
     }
 
     public void selectLecture(MemberDTO user) {
-        int num;
+        int number;
 
         while(true) {
             System.out.println("=====================");
@@ -53,28 +53,21 @@ public class MenuController {
             System.out.println("=====================");
             System.out.print("신청할 강좌를 선택하세요 : ");
 
-            num = sc.nextInt();
+            number = sc.nextInt();
 
-            switch (num) {
-                case 1:
-                    System.out.println(lectures.get(0).toString()); break;
-                case 2:
-                    System.out.println(lectures.get(1).toString()); break;
-                case 3:
-                    System.out.println(lectures.get(2).toString()); break;
-                case 4:
-                    System.out.println(lectures.get(3).toString()); break;
-                case 5:
-                    System.out.println(lectures.get(4).toString()); break;
-                case 9:
-                    System.out.println("뒤로가기"); break;
-                default:
-                    System.out.println("강좌를 잘못 선택하셨습니다."); break;
+            switch (number) {
+                case 1: System.out.println(lectures.get(0).toString()); break;
+                case 2: System.out.println(lectures.get(1).toString()); break;
+                case 3: System.out.println(lectures.get(2).toString()); break;
+                case 4: System.out.println(lectures.get(3).toString()); break;
+                case 5: System.out.println(lectures.get(4).toString()); break;
+                case 9: System.out.println("뒤로가기"); break;
+                default: System.out.println("강좌를 잘못 선택하셨습니다."); break;
             }
             break;
         }
 
-        int index = num - 1;
+        int index = number - 1;
 
         payment.mainPayment(user, lectures.get(index));
     }
