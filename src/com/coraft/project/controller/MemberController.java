@@ -10,6 +10,7 @@ public class MemberController {
     private ArrayList<MemberDTO> members;
 
     Scanner sc = new Scanner(System.in);
+    Menu menu = new Menu();
 
     public MemberController() {
         members = new ArrayList<MemberDTO>();
@@ -24,13 +25,16 @@ public class MemberController {
             if(members.get(i).getId().equals(member.getId())) {
                 if(members.get(i).getPwd().equals(member.getPwd())) {
                     System.out.println("로그인을 성공했습니다.");
+
                     Menu menu = new Menu();
                     menu.mainMenu(members.get(i));
                 }else {
                     System.out.println("아이디, 비밀번호를 다시 확인해주세요.");
                     break;
                 }
-            }
+            } /*else {
+                System.out.println("잘못된 로그인 정보를 입력하셨습니다. 다시 확인해주세요."); break;
+            }*/
 
         }
     }
@@ -49,20 +53,29 @@ public class MemberController {
 
     public void memberInfo(MemberDTO user) {
 
-        System.out.println("*****************************************************");
+        System.out.println("\n= 회원정보 =========================================");
         System.out.println("이름 : " + user.getName());
-        System.out.println("나이 : " + user.getAge());
+        System.out.println("나이 : " + user.getAge() + "세");
         System.out.println("성별 : " + user.getGender());
         System.out.println("전화번호 : " + user.getPhone());
         System.out.println("이메일 : " + user.getEmail());
         System.out.println("포인트 : " + user.getPoint());
-        System.out.println("*****************************************************");
+        System.out.println("-------------------------------------------------");
 
-        int num;
-        do {
+
+        while (true) {
+
             System.out.print("뒤로가기(1) : ");
-            num = sc.nextInt();
-        }while(num != 1);
+            String num = sc.nextLine();;
+
+            switch (num) {
+                case "1" : menu.mainMenu(user); break;
+                default: System.out.println("잘못된 번호를 입력하셨습니다. 다시 입력해주세요."); break;
+            }
+
+        }
+
+
     }
 
     public String checkId() {
@@ -72,7 +85,7 @@ public class MemberController {
         for(int i = 0; i < members.size(); i++) {
             if(members.get(i).getId().equals(id)) {
                 System.out.println("중복된 아이디 입니다. 다시 입력해주세요.");
-                System.out.println("*****************************************************");
+                System.out.println("-------------------------------------------------");
                 return checkId();
             }
         }
