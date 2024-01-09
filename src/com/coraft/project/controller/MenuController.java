@@ -11,6 +11,8 @@ import java.util.Scanner;
 public class MenuController {
     private List<LectureDTO> lectures;
     Scanner sc = new Scanner(System.in);
+    Payment payment = new Payment();
+    MemberController memcont = new MemberController();
 
     public MenuController() {
         lectures = new ArrayList<LectureDTO>();
@@ -29,15 +31,17 @@ public class MenuController {
 
         System.out.print("강좌를 선택하시겠습니까? (Y / N) : ");
         char answer = sc.next().toUpperCase().charAt(0);
+
         if (answer == 'Y') {
             selectLecture(user);
-        }else {
-            System.out.println("메뉴를 잘못 입력했습니다.");
+        }else if(answer == 'N') {
+            showListLecture(user);
         }
     }
 
     public void selectLecture(MemberDTO user) {
-        int num = sc.nextInt();
+        int num;
+
         while(true) {
             System.out.println("=====================");
             System.out.println("1.'보컬 클래스' 신청하기");
@@ -49,37 +53,29 @@ public class MenuController {
             System.out.println("=====================");
             System.out.print("신청할 강좌를 선택하세요 : ");
 
+            num = sc.nextInt();
+
             switch (num) {
                 case 1:
                     System.out.println(lectures.get(0).toString()); break;
-
                 case 2:
                     System.out.println(lectures.get(1).toString()); break;
-
                 case 3:
                     System.out.println(lectures.get(2).toString()); break;
-
                 case 4:
                     System.out.println(lectures.get(3).toString()); break;
-
                 case 5:
                     System.out.println(lectures.get(4).toString()); break;
-
                 case 9:
-                    System.out.println("뒤로가기");
-                    break;
+                    System.out.println("뒤로가기"); break;
                 default:
-                    System.out.println("강좌를 잘못 선택하셨습니다.");
-                    break;
+                    System.out.println("강좌를 잘못 선택하셨습니다."); break;
             }
             break;
         }
-
-        Payment payment = new Payment();
 
         int index = num - 1;
 
         payment.mainPayment(user, lectures.get(index));
     }
-
 }
