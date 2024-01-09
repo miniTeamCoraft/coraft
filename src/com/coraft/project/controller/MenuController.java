@@ -12,7 +12,6 @@ public class MenuController {
     private List<LectureDTO> lectures;
     Scanner sc = new Scanner(System.in);
     Payment payment = new Payment();
-    MemberController memcont = new MemberController();
 
     public MenuController() {
         lectures = new ArrayList<LectureDTO>();
@@ -40,8 +39,8 @@ public class MenuController {
     }
 
     public void selectLecture(MemberDTO user) {
-        int number;
-
+        int num;
+      
         while(true) {
             System.out.println("=====================");
             System.out.println("1.'보컬 클래스' 신청하기");
@@ -53,9 +52,8 @@ public class MenuController {
             System.out.println("=====================");
             System.out.print("신청할 강좌를 선택하세요 : ");
 
-            number = sc.nextInt();
-
-            switch (number) {
+            num = sc.nextInt();
+            switch (num) {
                 case 1: System.out.println(lectures.get(0).toString()); break;
                 case 2: System.out.println(lectures.get(1).toString()); break;
                 case 3: System.out.println(lectures.get(2).toString()); break;
@@ -67,7 +65,7 @@ public class MenuController {
             break;
         }
 
-        int index = number - 1;
+        int index = num - 1;
 
         payment.mainPayment(user, lectures.get(index));
     }
