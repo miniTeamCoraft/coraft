@@ -56,7 +56,7 @@ public class MenuController {
             System.out.println("-------------------------------------------------");
             System.out.print("신청할 강의를 선택하세요 : ");
             sc.nextLine();
-            num = sc.nextLine();
+            num = sc.next();
 
             switch (num) {
                 case "1":
