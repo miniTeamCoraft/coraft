@@ -49,11 +49,7 @@ public class LectureDTO {
 
     @Override
     public String toString() {
-        return "LectureDTO{" +
-                "lecName='" + lecName + '\'' +
-                ", date='" + date + '\'' +
-                ", time='" + time + '\'' +
-                ", lecPrice=" + lecPrice +
-                '}';
+        return "[ 수강 신청 정보 ]" +
+                "\n강의 이름 : " + lecName  + " | 날짜 : " + date  + " | 시간 : " + time  + " | 가격 : " + lecPrice;
     }
 }
