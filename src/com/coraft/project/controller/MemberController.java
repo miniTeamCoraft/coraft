@@ -20,8 +20,6 @@ public class MemberController {
         members.add(new MemberDTO("id05", "pwd05", "user05", 33, '여', "010-1283-0032", "user05@mail.com", 55000));
     }
     public void login(MemberDTO member) {
-        System.out.println("로그인 확인");
-
         for(int i = 0; i < members.size(); i++) {
             if(members.get(i).getId().equals(member.getId())) {
                 if(members.get(i).getPwd().equals(member.getPwd())) {
@@ -29,13 +27,11 @@ public class MemberController {
                     Menu menu = new Menu();
                     menu.mainMenu(members.get(i));
                 }else {
-                    System.out.println("비밀번호를 틀렸습니다. 다시 로그인해주세요.");
+                    System.out.println("아이디, 비밀번호를 다시 확인해주세요.");
                     break;
                 }
-            }else {
-                System.out.println("없는 아이디입니다. 다시 로그인해주세요.");
-                break;
             }
+
         }
     }
 
@@ -52,6 +48,7 @@ public class MemberController {
     }
 
     public void memberInfo(MemberDTO user) {
+
         System.out.println("*****************************************************");
         System.out.println("이름 : " + user.getName());
         System.out.println("나이 : " + user.getAge());
@@ -68,6 +65,18 @@ public class MemberController {
         }while(num != 1);
     }
 
+    public String checkId() {
+        System.out.print("아이디를 입력하세요 : ");
+        String id = sc.nextLine();
 
+        for(int i = 0; i < members.size(); i++) {
+            if(members.get(i).getId().equals(id)) {
+                System.out.println("중복된 아이디 입니다. 다시 입력해주세요.");
+                System.out.println("*****************************************************");
+                return checkId();
+            }
+        }
 
+        return id;
+    }
 }
