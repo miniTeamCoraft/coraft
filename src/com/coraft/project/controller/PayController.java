@@ -2,7 +2,6 @@ package com.coraft.project.controller;
 
 import com.coraft.project.dto.LectureDTO;
 import com.coraft.project.dto.MemberDTO;
-import com.coraft.project.view.Menu;
 
 
 import java.util.Scanner;
@@ -10,7 +9,7 @@ import java.util.Scanner;
 public class PayController {
 
     Scanner sc = new Scanner(System.in);
-    Menu menu = new Menu();
+
 
     // 포인트 차감 결제
     public void payBonusMember(MemberDTO user, LectureDTO lecture) {
@@ -45,8 +44,7 @@ public class PayController {
             System.out.println(". . .");
             System.out.println("포인트로 결제 완료되었습니다.");
         }
-        menu.mainMenu(user);
-
+        System.out.println(user.getPoint());
 
     }
 
@@ -65,7 +63,7 @@ public class PayController {
         System.out.println("카드결제가 진행됩니다.");
         System.out.println(". . .");
         System.out.println("카드 결제가 완료되었습니다. ");
-        menu.mainMenu(user);
+
 
 
     }

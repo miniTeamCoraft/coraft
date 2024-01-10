@@ -23,22 +23,23 @@ public class MenuController {
     }
 
     public void showListLecture(MemberDTO user) {
+
         System.out.println("\n= 강의목록 =========================================================================================");
         for (int i = 0; i < lectures.size(); i++) {
             System.out.println("강의 이름 : " + lectures.get(i).getLecName() + " || 날짜(시간) : " + lectures.get(i).getDate() + " ( " + lectures.get(i).getTime() + " ) || 가격 : " + lectures.get(i).getLecPrice());
         }
         System.out.println("---------------------------------------------------------------------------------------------------");
 
-
         System.out.print("강의를 선택하시겠습니까? (Y / N) : ");
         char answer = sc.next().toUpperCase().charAt(0);
+
         if (answer == 'Y') {
             selectLecture(user);
         } else if (answer == 'N') {
             System.out.println("이전 페이지로 돌아갑니다.");
         } else {
             System.out.println("잘못된 메뉴를 선택하셨습니다. 강의 목록으로 돌아갑니다.");
-            showListLecture(user);
+            showListLecture(user);        
         }
     }
 
@@ -55,7 +56,7 @@ public class MenuController {
             System.out.println("-------------------------------------------------");
             System.out.print("신청할 강의를 선택하세요 : ");
             sc.nextLine();
-            num = sc.nextLine();
+            num = sc.next();
 
             switch (num) {
                 case "1":
@@ -83,8 +84,8 @@ public class MenuController {
                     break;
                 default: System.out.println("강좌를 잘못 선택하셨습니다.");
                     return;
+
             }
         }
     }
-
 }
