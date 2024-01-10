@@ -45,9 +45,8 @@ public class PayController {
             System.out.println(". . .");
             System.out.println("포인트로 결제 완료되었습니다.");
         }
-        System.out.println(user.getPoint());
-
         menu.mainMenu(user);
+
     }
 
     // 카드결제
@@ -65,8 +64,13 @@ public class PayController {
         System.out.println("카드결제가 진행됩니다.");
         System.out.println(". . .");
         System.out.println("카드 결제가 완료되었습니다. ");
-
         menu.mainMenu(user);
+
+
     }
+
+
+
+
 
 }
