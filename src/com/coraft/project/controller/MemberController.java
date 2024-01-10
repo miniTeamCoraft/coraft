@@ -62,19 +62,18 @@ public class MemberController {
         System.out.println("포인트 : " + user.getPoint());
         System.out.println("-------------------------------------------------");
 
+        while(true) {
+            System.out.print("메인으로 돌아갑니다. (Y / N)");
+            char answer = sc.next().toUpperCase().charAt(0);
 
-        while (true) {
-
-            System.out.print("뒤로가기(1) : ");
-            String num = sc.nextLine();;
-
-            switch (num) {
-                case "1" : menu.mainMenu(user); break;
-                default: System.out.println("잘못된 번호를 입력하셨습니다. 다시 입력해주세요."); break;
+            if(answer == 'Y') {
+                menu.mainMenu(user);
+            }else if(answer == 'N') {
+                memberInfo(user);
+            }else {
+                System.out.print("다시 입력해주세요"); break;
             }
-
         }
-
 
     }
 
