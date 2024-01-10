@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Menu {
     Scanner sc = new Scanner(System.in);
 
+
     public void mainMenu(MemberDTO user) {
         while(true) {
             System.out.println("\n= 메인메뉴 =========================================");
@@ -22,11 +23,14 @@ public class Menu {
 
             MenuController lectcont = new MenuController();
             MemberController memcont = new MemberController();
+            Login login = new Login();
 
             switch(num) {
                 case "1" : lectcont.showListLecture(user); break;
                 case "2" : memcont.memberInfo(user); break;
-                case "9" : System.out.println("Coraft를 로그아웃합니다. 감사합니다."); return;
+                case "9" :
+                    System.out.println("Coraft를 로그아웃합니다. 감사합니다."); return;
+//                    login.mainLogin(); break;
                 default : System.out.println("메뉴를 잘못 선택했습니다."); break;  //try catch 생각필요(문자로 입력시 에러 발생)
             }
         }

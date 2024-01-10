@@ -32,9 +32,9 @@ public class MemberController {
                     System.out.println("아이디, 비밀번호를 다시 확인해주세요.");
                     break;
                 }
-            } /*else {
-                System.out.println("잘못된 로그인 정보를 입력하셨습니다. 다시 확인해주세요."); break;
-            }*/
+            } else {
+                System.out.println("잘못된 로그인 정보를 입력하셨습니다. 다시 확인해주세요."); return;
+            }
 
         }
     }
@@ -63,7 +63,7 @@ public class MemberController {
         System.out.println("-------------------------------------------------");
 
         while(true) {
-            System.out.print("메인으로 돌아갑니다. (Y / N)");
+            System.out.print("메인으로 돌아갑니다. (Y / N) ");
             char answer = sc.next().toUpperCase().charAt(0);
 
             if(answer == 'Y') {
