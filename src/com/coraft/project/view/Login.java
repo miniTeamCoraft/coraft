@@ -3,6 +3,7 @@ package com.coraft.project.view;
 import com.coraft.project.controller.MemberController;
 import com.coraft.project.dto.MemberDTO;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Login {
@@ -11,6 +12,8 @@ public class Login {
     Scanner sc = new Scanner(System.in);
 
     public void mainLogin() {
+        System.out.println("=================================================");
+
         System.out.println("\n  CORAFT에 오신걸 환영합니다.😊");
         while(true) {
             System.out.println("\n= 로그인 =========================================");
@@ -43,7 +46,6 @@ public class Login {
     }
 
     public MemberDTO doRegist() {
-
         System.out.println("\n= 회원가입 =========================================");
         String id = memcont.checkId();
         sc.nextLine();
@@ -60,6 +62,7 @@ public class Login {
         String phone = sc.nextLine();
         System.out.print("이메일을 입력하세요 : ");
         String email = sc.nextLine();
+
         System.out.println("-------------------------------------------------");
 
         System.out.print("회원가입을 하시겠습니까? (Y / N) ");
@@ -69,8 +72,10 @@ public class Login {
 
         if(answer == 'Y') {
             user = new MemberDTO(id, pwd, name, age, gender, phone, email);
-            System.out.println("축하드립니다!! 회원가입에 성공했습니다. 가입축하 5000포인트를 드렸습니다!");
-
+            System.out.println("\n축하드립니다!! 회원가입에 성공했습니다. 가입축하 5000포인트를 드렸습니다!");
+        }else if(answer == 'N') {
+            System.out.println("로그인 페이지로 넘어갑니다.");
+            mainLogin();
         }else {
             System.out.println("잘못 입력하셨습니다. 로그인 페이지로 넘어갑니다.");
             mainLogin();

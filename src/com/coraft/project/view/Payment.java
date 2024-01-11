@@ -34,7 +34,7 @@ public class Payment {
                     pc.payBonusMember(user, lecture);
 
                 } else if (ch == 'N') {
-                    System.out.println("포인트 결제가 취소되었습니다. 다른 메뉴를 선택해주세요."); break;
+                    System.out.println("\n포인트 결제가 취소되었습니다. 다른 메뉴를 선택해주세요."); break;
 
                 } else {
                     System.out.println("잘못된 메뉴를 선택하셨습니다. 확인 후 재입력해주세요");
