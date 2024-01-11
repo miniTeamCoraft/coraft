@@ -1,11 +1,12 @@
 package com.coraft.project.view;
 
 import com.coraft.project.controller.MenuController;
-import com.coraft.project.controller.MemberController;
 import com.coraft.project.controller.PayController;
 import com.coraft.project.dto.MemberDTO;
 
 import java.util.Scanner;
+
+import static com.coraft.project.view.Login.memcont;
 
 public class Menu {
     Scanner sc = new Scanner(System.in);
@@ -14,8 +15,8 @@ public class Menu {
         while (true) {
             System.out.println("\n= 메인메뉴 =========================================");
             System.out.println("1.강좌 목록 보기");
-            System.out.println("2.회원 정보 확인하기");
-            System.out.println("3.수강신청 목록 확인하기");
+            System.out.println("2.회원 정보 확인");
+            System.out.println("3.수강신청 목록 확인");
             System.out.println("9.로그아웃");
             System.out.println("-------------------------------------------------");
 
@@ -24,7 +25,6 @@ public class Menu {
 
             Login login = new Login();
             MenuController lectcont = new MenuController();
-            MemberController memcont = new MemberController();
 
             PayController paycont = new PayController();
 
@@ -43,9 +43,9 @@ public class Menu {
                     }
                     break;
                 case "9":
-                    System.out.println("Coraft를 로그아웃합니다. 감사합니다."); login.mainLogin(); break;
+                    System.out.println("CORAFT를 로그아웃합니다. 감사합니다."); login.mainLogin(); break;
                 default:
-                    System.out.println("메뉴를 잘못 선택했습니다.");
+                    System.out.println("잘못된 메뉴를 선택하셨습니다.");
                     break;
             }
         }

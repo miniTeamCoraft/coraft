@@ -26,7 +26,7 @@ public class MenuController {
 
         System.out.println("\n= 강의목록 =========================================================================================");
         for (int i = 0; i < lectures.size(); i++) {
-            System.out.println("강의 이름 : " + lectures.get(i).getLecName() + " || 날짜(시간) : " + lectures.get(i).getDate() + " ( " + lectures.get(i).getTime() + " ) || 가격 : " + lectures.get(i).getLecPrice() + "원");
+            System.out.println("강의 이름 : " + lectures.get(i).getLecName() + "  ||  날짜(시간) : " + lectures.get(i).getDate() + " ( " + lectures.get(i).getTime() + " )  ||  가격 : " + lectures.get(i).getLecPrice() + "원");
         }
         System.out.println("---------------------------------------------------------------------------------------------------");
 
@@ -82,7 +82,6 @@ public class MenuController {
                 case "9":
                     System.out.println("뒤로가기");
                     showListLecture(user); break;
-                //return;
                 default: System.out.println("강좌를 잘못 선택하셨습니다.");
                     break;
 
