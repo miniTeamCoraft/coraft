@@ -4,7 +4,6 @@ import com.coraft.project.dto.LectureDTO;
 import com.coraft.project.dto.MemberDTO;
 import com.coraft.project.view.Menu;
 
-
 import java.util.Scanner;
 
 public class PayController {
@@ -68,7 +67,6 @@ public class PayController {
 
         int getPoint = (int)Math.abs((lecture.getLecPrice() * 5) / 100.0);
 
-
         System.out.println(user.getName() + "님의 결제금액은 " + lecture.getLecPrice() + "원 입니다.");
         System.out.println("craft 규정에 따라 결제금액의 5%인 " + getPoint + "포인트 적립됩니다.");
         user.setPoint(getPoint + user.getPoint());
@@ -80,11 +78,5 @@ public class PayController {
         System.out.println("카드 결제가 완료되었습니다. ");
         menu.mainMenu(user);
 
-
     }
-
-
-
-
-
 }
