@@ -6,16 +6,16 @@ import com.coraft.project.dto.MemberDTO;
 import java.util.Scanner;
 
 public class Login {
-
-    MemberController memcont = new MemberController();
+    public static MemberController memcont = new MemberController();
 
     Scanner sc = new Scanner(System.in);
 
     public void mainLogin() {
+        System.out.println("\n  CORAFT에 오신걸 환영합니다.😊");
         while(true) {
             System.out.println("\n= 로그인 =========================================");
-            System.out.println("1.로그인 하기");
-            System.out.println("2.회원가입 하기");
+            System.out.println("1.로그인");
+            System.out.println("2.회원가입");
             System.out.println("9.종료");
             System.out.println("-------------------------------------------------");
 
@@ -26,8 +26,8 @@ public class Login {
             switch (num) {
                 case "1" : memcont.login(doLogin()); break;
                 case "2" : memcont.regist(doRegist()); break;
-                case "9" : System.out.println("Coraft를 나갑니다. 감사합니다."); return;
-                default : System.out.println("메뉴를 잘못 입력했습니다."); break;
+                case "9" : System.out.println("CORAFT를 종료합니다."); return;
+                default : System.out.println("잘못된 메뉴를 선택하셨습니다. 다시 입력해주세요."); break;
             }
         }
     }
@@ -44,9 +44,9 @@ public class Login {
 
     public MemberDTO doRegist() {
 
-        sc.nextLine();
         System.out.println("\n= 회원가입 =========================================");
         String id = memcont.checkId();
+        sc.nextLine();
         System.out.print("비밀번호를 입력하세요 : ");
         String pwd = sc.nextLine();
         System.out.print("이름을 입력하세요 : ");

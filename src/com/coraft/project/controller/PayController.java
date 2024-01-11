@@ -17,10 +17,10 @@ public class PayController {
     // 포인트 차감 결제
     public ArrayList<LectureDTO> payBonusMember(MemberDTO user, LectureDTO lecture) {
 
-        int getPoint = (int)Math.abs((lecture.getLecPrice() * 5) / 100.0);
+        int getPoint = (int)(lecture.getLecPrice() * 0.05);
 
         System.out.println("-------------------------------------------------");
-        System.out.println("craft 규정에 따라 결제금액의 5%인 " + getPoint + "포인트 적립됩니다.");
+        System.out.println("CORAFT 규정에 따라 결제금액의 5%인 " + getPoint + "포인트 적립됩니다.");
         System.out.println("적립된 포인트는 다음 수강신청 시 사용하실 수 있습니다.");
         System.out.println("-------------------------------------------------");
         System.out.println(user.getName() + "님의 결제금액은 " + lecture.getLecPrice() + "원 입니다.");
@@ -71,10 +71,10 @@ public class PayController {
     // 카드결제
     public ArrayList<LectureDTO> payCardMember(MemberDTO user, LectureDTO lecture) {
 
-        int getPoint = (int)Math.abs((lecture.getLecPrice() * 5) / 100.0);
+        int getPoint = (int)(lecture.getLecPrice() * 0.05);
 
         System.out.println(user.getName() + "님의 결제금액은 " + lecture.getLecPrice() + "원 입니다.");
-        System.out.println("craft 규정에 따라 결제금액의 5%인 " + getPoint + "포인트 적립됩니다.");
+        System.out.println("CORAFT 규정에 따라 결제금액의 5%인 " + getPoint + "포인트 적립됩니다.");
         user.setPoint(getPoint + user.getPoint());
         System.out.println("적립된 포인트는 다음 수강신청 시 사용하실 수 있습니다.");
 
@@ -96,7 +96,7 @@ public class PayController {
             System.out.println("수강 신청 내역이 존재하지 않습니다.");
         }else {
             for(int i = 0; i < lec.size(); i++) {
-                System.out.println("강의 이름 : " + lec.get(i).getLecName() + " | 날짜 : " + lec.get(i).getDate() + " | 시간 : " + lec.get(i).getTime()  + " | 가격 : " + lec.get(i).getLecPrice() + "원");
+                System.out.println("강의 이름 : " + lec.get(i).getLecName() + " || 날짜 : " + lec.get(i).getDate() + " || 시간 : " + lec.get(i).getTime()  + " || 가격 : " + lec.get(i).getLecPrice() + "원");
             }
         }
     }

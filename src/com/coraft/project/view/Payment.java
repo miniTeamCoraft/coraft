@@ -14,9 +14,9 @@ public class Payment {
     public void mainPayment(MemberDTO user, LectureDTO lecture) {
 
         System.out.println("\n= 결제진행 =========================================");
-        System.out.println("1. 카드 결제");
-        System.out.println("2. 포인트 차감"); // 포인트 차감 후 카드결제로 넘어감
-        System.out.println("9. 결제 취소");  // 클래스 선택으로 넘어감
+        System.out.println("1.카드결제");
+        System.out.println("2.포인트 차감"); // 포인트 차감 후 카드결제로 넘어감
+        System.out.println("9.결제 취소");  // 클래스 선택으로 넘어감
         System.out.println("-------------------------------------------------");
         System.out.print("결제진행 수단을 선택해 주세요 : ");
         int payProgress = sc.nextInt();
@@ -34,14 +34,14 @@ public class Payment {
                     pc.payBonusMember(user, lecture);
 
                 } else if (ch == 'N') {
-                    System.out.println("포인트 결제가 취소되었습니다. 다른메뉴를 선택해주세요."); break;
+                    System.out.println("포인트 결제가 취소되었습니다. 다른 메뉴를 선택해주세요."); break;
 
                 } else {
-                    System.out.println("잘못된 번호를 입력하셨습니다. 확인 후 재입력해주세요");
+                    System.out.println("잘못된 메뉴를 선택하셨습니다. 확인 후 재입력해주세요");
                 } break;
 
             case 9 : System.out.println("결제가 취소되었습니다."); break;
-            default: System.out.println("잘못된 번호를 입력하셨습니다. 확인 후 재입력해주세요"); break;
+            default: System.out.println("잘못된 메뉴를 선택하셨습니다. 확인 후 재입력해주세요"); break;
 
         }
     }
