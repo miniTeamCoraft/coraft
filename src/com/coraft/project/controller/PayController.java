@@ -4,6 +4,7 @@ import com.coraft.project.dto.LectureDTO;
 import com.coraft.project.dto.MemberDTO;
 import com.coraft.project.view.Menu;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PayController {
@@ -11,8 +12,10 @@ public class PayController {
     Scanner sc = new Scanner(System.in);
     Menu menu = new Menu();
 
+    public static ArrayList<LectureDTO> lec = new ArrayList<>();
+
     // 포인트 차감 결제
-    public void payBonusMember(MemberDTO user, LectureDTO lecture) {
+    public ArrayList<LectureDTO> payBonusMember(MemberDTO user, LectureDTO lecture) {
 
         int getPoint = (int)Math.abs((lecture.getLecPrice() * 5) / 100.0);
 
@@ -24,8 +27,6 @@ public class PayController {
         System.out.println("보유하신 포인트는 " + user.getPoint() + "포인트 입니다.");
 
         int newPrice = lecture.getLecPrice() - user.getPoint();
-
-
 
         if(newPrice < 0) {
             System.out.println("보유하신 포인트가 결제할 금액보다 많습니다.");
@@ -58,12 +59,17 @@ public class PayController {
             System.out.println(". . .");
             System.out.println("포인트로 결제 완료되었습니다.");
         }
+
+        lec.add(new LectureDTO(lecture.getLecName(), lecture.getDate(), lecture.getTime(), lecture.getLecPrice()));
+
         menu.mainMenu(user);
+
+        return lec;
 
     }
 
     // 카드결제
-    public void payCardMember(MemberDTO user, LectureDTO lecture) {
+    public ArrayList<LectureDTO> payCardMember(MemberDTO user, LectureDTO lecture) {
 
         int getPoint = (int)Math.abs((lecture.getLecPrice() * 5) / 100.0);
 
@@ -76,7 +82,20 @@ public class PayController {
         System.out.println("카드결제가 진행됩니다.");
         System.out.println(". . .");
         System.out.println("카드 결제가 완료되었습니다. ");
+
+        lec.add(new LectureDTO(lecture.getLecName(), lecture.getDate(), lecture.getTime(), lecture.getLecPrice()));
+
         menu.mainMenu(user);
 
+        return lec;
     }
+
+    public void userSelectLec() {
+        System.out.println("수강 내역");
+        System.out.println("----------------");
+        for(int i = 0; i < lec.size(); i++) {
+            System.out.println(lec.get(i).toString());
+        }
+    }
+
 }

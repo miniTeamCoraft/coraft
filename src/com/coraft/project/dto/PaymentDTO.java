@@ -18,5 +18,4 @@ public class PaymentDTO {
         return payCard;
     }
 
-
 }
