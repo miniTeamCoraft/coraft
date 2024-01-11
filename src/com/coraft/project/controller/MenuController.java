@@ -26,11 +26,11 @@ public class MenuController {
 
         System.out.println("\n= 강의목록 =========================================================================================");
         for (int i = 0; i < lectures.size(); i++) {
-            System.out.println("강의 이름 : " + lectures.get(i).getLecName() + " || 날짜(시간) : " + lectures.get(i).getDate() + " ( " + lectures.get(i).getTime() + " ) || 가격 : " + lectures.get(i).getLecPrice());
+            System.out.println("강의 이름 : " + lectures.get(i).getLecName() + " || 날짜(시간) : " + lectures.get(i).getDate() + " ( " + lectures.get(i).getTime() + " ) || 가격 : " + lectures.get(i).getLecPrice() + "원");
         }
         System.out.println("---------------------------------------------------------------------------------------------------");
 
-        System.out.print("강의를 선택하시겠습니까? (Y / N) : ");
+        System.out.print("강의를 선택하시겠습니까? (Y / N) ");
         char answer = sc.next().toUpperCase().charAt(0);
 
         if (answer == 'Y') {
@@ -58,7 +58,6 @@ public class MenuController {
             sc.nextLine();
             num = sc.next();
 
-            // 8번 누르면 메인 9번 누르면 강의 선택 오류 - "9" : return;, 다른메뉴 선택 : break;로 변경
             switch (num) {
                 case "1":
                     System.out.println(lectures.get(0).toString());

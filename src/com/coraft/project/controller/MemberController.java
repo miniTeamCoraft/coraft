@@ -21,22 +21,6 @@ public class MemberController {
         members.add(new MemberDTO("id05", "pwd05", "user05", 33, '여', "010-1283-0032", "user05@mail.com", 55000));
     }
     public void login(MemberDTO memberDTO) {
-//        for(int i = 0; i < members.size(); i++) {
-//            if(members.get(i).getId().equals(member.getId())) {
-//                if(members.get(i).getPwd().equals(member.getPwd())) {
-//                    System.out.println("로그인을 성공했습니다.");
-//
-//                    Menu menu = new Menu();
-//                    menu.mainMenu(members.get(i));
-//                }else {
-//                    System.out.println("아이디, 비밀번호를 다시 확인해주세요.");
-//                    break;
-//                }
-//            } /*else if(members.get(i).getId() != member.getId()) {
-//                System.out.println("잘못된 로그인 정보를 입력하셨습니다. 다시 확인해주세요."); return;
-//            }
-//*/
-//        }
 
         MemberDTO member = FindById(memberDTO.getId());
         if(member == null){
@@ -51,14 +35,6 @@ public class MemberController {
 
     }
 
-    private boolean idCheck(MemberDTO memberDTO) {
-        boolean check = true;
-        MemberDTO member = FindById(memberDTO.getId());
-        if(member == null)
-            check = false;
-        return check;
-    }
-
     private MemberDTO FindById(String id) {
         for(MemberDTO memberDTO : members) {
             if(memberDTO.getId().equals(id)) {
@@ -68,19 +44,11 @@ public class MemberController {
         return null;
     }
 
-
-
-
     public void regist(MemberDTO user) {
         members.add(user);
 
         Menu menu = new Menu();
         menu.mainMenu(user);
-
-        /* 전체 회원 출력 */
-//        for(MemberDTO mem : members) {
-//            System.out.println(mem.toString());
-//        }
     }
 
     public void memberInfo(MemberDTO user) {
