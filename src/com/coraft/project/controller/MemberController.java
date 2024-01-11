@@ -20,6 +20,8 @@ public class MemberController {
         members.add(new MemberDTO("id04", "pwd04", "user04", 45, '여', "010-2789-1087", "user04@mail.com", 60000));
         members.add(new MemberDTO("id05", "pwd05", "user05", 33, '여', "010-1283-0032", "user05@mail.com", 55000));
     }
+/*
+
     public void login(MemberDTO memberDTO) {
 
         MemberDTO member = FindById(memberDTO.getId());
@@ -44,10 +46,40 @@ public class MemberController {
         return null;
     }
 
+
+*/
+
+
+
+    public void login(MemberDTO user) {
+        System.out.println(members);
+        System.out.println(members.hashCode());
+        MemberDTO member = FindById(user.getId());
+        if(member == null){
+            System.out.println("등록되지 않은 ID입니다.");
+        }else if(member.getPwd().equals(user.getPwd())) {
+            System.out.println(member.getId() + " 님께서 로그인 하셨습니다.");
+            Menu menu = new Menu();
+            menu.mainMenu(user);
+        }else {
+            System.out.println("비밀번호가 틀렸습니다.");
+        }
+    }
+
+    private MemberDTO FindById(String id) {
+        for(MemberDTO user : members) {
+            if(user.getId().equals(id)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
     public void regist(MemberDTO user) {
         members.add(user);
+        System.out.println(members);
+        System.out.println(members.hashCode());
 
-        Menu menu = new Menu();
         menu.mainMenu(user);
     }
 
