@@ -51,6 +51,7 @@ public class Login {
     }
 
     public MemberDTO doRegist() {
+
         sc.nextLine();
         System.out.println("\n= 회원가입 =========================================");
         String id = memcont.checkId();
@@ -60,7 +61,7 @@ public class Login {
         String name = sc.nextLine();
         System.out.print("나이를 입력하세요 : ");
         int age = sc.nextInt();
-        System.out.print("성별을 입력하세요 () : ");
+        System.out.print("성별을 입력하세요 (여 / 남) : ");
         char gender = sc.next().charAt(0);
         sc.nextLine();
         System.out.print("핸드폰 번호를 입력하세요(예시 : 010-0000-0000) : ");
@@ -69,7 +70,7 @@ public class Login {
         String email = sc.nextLine();
         System.out.println("-------------------------------------------------");
 
-        System.out.print("회원가입을 하시겠습니까? (Y / N)");
+        System.out.print("회원가입을 하시겠습니까? (Y / N) ");
         char answer = sc.next().toUpperCase().charAt(0);
 
         MemberDTO user = null;
@@ -84,5 +85,7 @@ public class Login {
         }
 
         return user;
+
+
     }
 }
