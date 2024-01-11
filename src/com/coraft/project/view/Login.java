@@ -6,9 +6,10 @@ import com.coraft.project.dto.MemberDTO;
 import java.util.Scanner;
 
 public class Login {
-    Scanner sc = new Scanner(System.in);
 
     MemberController memcont = new MemberController();
+
+    Scanner sc = new Scanner(System.in);
 
     public void mainLogin() {
         while(true) {
@@ -71,7 +72,7 @@ public class Login {
             System.out.println("축하드립니다!! 회원가입에 성공했습니다. 가입축하 5000포인트를 드렸습니다!");
 
         }else {
-            System.out.println("잘못 입력하셨습니다. 로그인 페이지로 돌아갑니다.");
+            System.out.println("잘못 입력하셨습니다. 로그인 페이지로 넘어갑니다.");
             mainLogin();
         }
 

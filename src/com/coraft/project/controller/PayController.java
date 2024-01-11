@@ -91,10 +91,13 @@ public class PayController {
     }
 
     public void userSelectLec() {
-        System.out.println("수강 내역");
-        System.out.println("----------------");
-        for(int i = 0; i < lec.size(); i++) {
-            System.out.println(lec.get(i).toString());
+        System.out.println("\n[ 수강 내역 ]");
+        if(lec.isEmpty()) {
+            System.out.println("수강 신청 내역이 존재하지 않습니다.");
+        }else {
+            for(int i = 0; i < lec.size(); i++) {
+                System.out.println("강의 이름 : " + lec.get(i).getLecName() + " | 날짜 : " + lec.get(i).getDate() + " | 시간 : " + lec.get(i).getTime()  + " | 가격 : " + lec.get(i).getLecPrice() + "원");
+            }
         }
     }
 
