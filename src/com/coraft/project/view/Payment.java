@@ -11,7 +11,6 @@ public class Payment {
 
     private Scanner sc = new Scanner(System.in);
     PayController pc = new PayController();
-    //MenuController menuc = new MenuController();
 
     public void mainPayment(MemberDTO user, LectureDTO lecture) {
 
@@ -44,11 +43,7 @@ public class Payment {
 
             case 9 : System.out.println("결제가 취소되었습니다."); break;
             default: System.out.println("잘못된 번호를 입력하셨습니다. 확인 후 재입력해주세요"); break;
+
         }
-
-
     }
-
-
-
 }

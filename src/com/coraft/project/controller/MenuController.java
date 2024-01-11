@@ -58,6 +58,7 @@ public class MenuController {
             sc.nextLine();
             num = sc.next();
 
+            // 8번 누르면 메인 9번 누르면 강의 선택 오류 - "9" : return;, 다른메뉴 선택 : break;로 변경
             switch (num) {
                 case "1":
                     System.out.println(lectures.get(0).toString());
@@ -81,9 +82,9 @@ public class MenuController {
                     break;
                 case "9":
                     System.out.println("뒤로가기");
-                    break;
-                default: System.out.println("강좌를 잘못 선택하셨습니다.");
                     return;
+                default: System.out.println("강좌를 잘못 선택하셨습니다.");
+                    break;
 
             }
         }
