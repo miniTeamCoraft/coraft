@@ -14,7 +14,7 @@ public class Menu {
     public void mainMenu(MemberDTO user) {
         while (true) {
             System.out.println("\n= 메인메뉴 =========================================");
-            System.out.println("1.강좌 목록 보기");
+            System.out.println("1.강의 목록 보기");
             System.out.println("2.회원 정보 확인");
             System.out.println("3.수강신청 목록 확인");
             System.out.println("9.로그아웃");
