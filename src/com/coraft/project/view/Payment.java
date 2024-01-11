@@ -15,8 +15,8 @@ public class Payment {
 
         System.out.println("\n= 결제진행 =========================================");
         System.out.println("1.카드결제");
-        System.out.println("2.포인트 차감"); // 포인트 차감 후 카드결제로 넘어감
-        System.out.println("9.결제 취소");  // 클래스 선택으로 넘어감
+        System.out.println("2.포인트 차감");  // 포인트 차감 후 카드결제로 넘어감
+        System.out.println("9.결제 취소");   // 클래스 선택으로 넘어감
         System.out.println("-------------------------------------------------");
         System.out.print("결제진행 수단을 선택해 주세요 : ");
         int payProgress = sc.nextInt();

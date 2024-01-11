@@ -82,7 +82,7 @@ public class MenuController {
                 case "9":
                     System.out.println("뒤로가기");
                     showListLecture(user); break;
-                default: System.out.println("강좌를 잘못 선택하셨습니다.");
+                default: System.out.println("잘못된 강의를 선택하셨습니다.");
                     break;
 
             }

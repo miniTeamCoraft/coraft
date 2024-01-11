@@ -21,7 +21,6 @@ public class MemberController {
     }
 
     public void login(MemberDTO memberDTO) {
-
         MemberDTO member = FindById(memberDTO.getId());
         if(member == null){
             System.out.println("등록되지 않은 ID입니다.");
@@ -32,7 +31,6 @@ public class MemberController {
         }else {
             System.out.println("비밀번호를 틀렸습니다.");
         }
-
     }
 
     private MemberDTO FindById(String id) {
