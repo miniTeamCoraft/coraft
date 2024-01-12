@@ -55,7 +55,7 @@ public class PayController {
 
         } else if (newPrice == 0) {
             System.out.println(user.getPoint() + "포인트 차감되었습니다.");
-            user.setPoint(getPoint + user.getPoint());
+            user.setPoint(getPoint);
             System.out.println(". . .");
             System.out.println("포인트로 결제 완료되었습니다.");
         }
